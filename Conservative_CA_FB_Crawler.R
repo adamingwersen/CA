@@ -109,6 +109,8 @@ facebook.links.tr3 = facebook.links.tr3[-31]
 facebook.links.tr3 = facebook.links.tr3[-36]
 facebook.links.tr3 = facebook.links.tr3[-38]
 facebook.links.tr3 = facebook.links.tr3[-51]
+#2
+facebook.links.tr3 = facebook.links.tr3[-52]
 facebook.links.tr3 = facebook.links.tr3[-53]
 facebook.links.tr3 = facebook.links.tr3[-62]
 facebook.links.tr3 = facebook.links.tr3[-76]
@@ -116,23 +118,15 @@ facebook.links.tr3 = facebook.links.tr3[-76]
 facebook.links.tr3 = facebook.links.tr3[-81]
 
 ### API-request
-token <- "CAACEdEose0cBAPsMJ09RC7yDkmrGOA9E8d6fdlYjvW9Qoh6lucZCFjw1Y6KUHalpkwI6fZC4QDrtTbU4RjO3uqE71QJiiC1ewJPn1spATUrlvWnmMDGIXvm6hYP2ou3GiZBgaPkd3mZBDZAf0gAaXMgYSJ5f1nY6gZBVCegoCIyUbw0c5qk72n8dbfvb0K5AJ5zSvTIoca9gZDZD"
+token <- "CAACEdEose0cBAF87OIBn6Qv4CtxeYet5IIXsSkhKnKUvMZAZCi6uZAFFG62HlZA4BQgJGafZCVcyh22EVHscF7yIWSw89lCH5j7mZBWhZB6DEDF5buKvRJDXtfuOhpGb5NIJRZAGWT8lKlZClfoTo9mqDlCEb00FZCEZBR4H8GZCgICbPZBHC7KKnCyZCp8Aba2oJgdx3xHoeLuYnXSQZDZD"
 require("Rfacebook")
 get_fb_cons = function(facebook.links.tr3){
-  fb.feed.con = getPage(facebook.links.tr3, token, n = 10)
+  fb.feed.con = getPage(facebook.links.tr3, token, n = 5000, since = '2015/08/01', until = '2015/10/19')
   return(cbind(fb.feed.con, facebook.links.tr3))
 }
 
 library("plyr")
 fb.con.list = ldply(facebook.links.tr3, get_fb_cons, .inform = TRUE)
 
-
-
-
-
-
-
-
-
-
+head(facebook.links.tr3, 80)
 
