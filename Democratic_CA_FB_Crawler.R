@@ -45,7 +45,6 @@ ndp.candidate.complete.frame$fbref = gsub("\\https://fb.com/", "", ndp.candidate
 fbref.sub = ndp.candidate.complete.frame[ ,'fbref']
 # Put into quotes..
 message(dQuote(fbref.sub))
-
                                                       # Gathering FB posts using plyr loop #
                                                       ######################################
 
@@ -60,7 +59,3 @@ scrape_ndp_fb = function(fbref.sub){
 # Simple looping with HW's plyr-package - .inform = TRUE -> if error; show content
 library("plyr")
 plyrndp = data.frame(ldply(fbref.sub, scrapendp_fb, .inform = TRUE))
-
-
-
-
