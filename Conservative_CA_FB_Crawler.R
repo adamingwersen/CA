@@ -1,5 +1,5 @@
 ### #### ### #### ### #### ### #### ### #### ### #### ### #### ### #### ### #### ### #### ### #### ### #### ### #### ### #### ### #### 
-#CONS PARTY SITE
+                                                              #CONS PARTY SITE
 library("rvest")
 library("plyr")
 library("stringr")
@@ -119,6 +119,3 @@ for(i in facebook.links.tr3){
 
 # Coerce fb.list.conservative into ONE large dataframe : 
 facebook.conservative.df = ldply(fb.list.conservative, data.frame)
-
-
-
