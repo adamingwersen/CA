@@ -47,6 +47,8 @@ fbref.sub = ndp.candidate.complete.frame[ ,'fbref']
 message(dQuote(fbref.sub))
                                                       # Gathering FB posts using plyr loop #
                                                       ######################################
+# Load Facebook oauth into environment:
+load("fb_oauth")
 
 # Facebook request-function using getPage 
 library("Rfacebook")
