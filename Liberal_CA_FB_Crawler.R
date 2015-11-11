@@ -63,9 +63,17 @@ load("fb_oauth")
 # Get posts from each element in URLSub (up to 10k) from 1st of july until 19th of october (2015)
 require("Rfacebook")
 scrapelib_fb = function(URLSub){
-  fbsh = getPage(URLSub, token = fb_oauth, n = 10000 since = '2015/07/01', until = '2015/10/19')
-  if(class(fbsh)=='try-error') next;
-  return(fbsh)
+  fbsh = getPage(URLSub, token=fb_oauth, n = 100000, since = '2015/07/01', until = '2015/10/19')
+  return(cbind(URLSub, fbsh))
+}
+
+options(warn=1)
+fb.list.liberal = list()
+for(i in URLSub){
+  print(paste("processing", i, sep = " :: "))
+  fb.list.liberal[[i]] = scrapelib_fb(i)
+  Sys.sleep(0.05)
+  cat("done!\n")
 }
 # Iterate through all elements and apply function
 library("plyr")

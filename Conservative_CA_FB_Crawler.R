@@ -47,6 +47,7 @@ cons.link.df = cons.link.df[-grep("Peter Van Loan", cons.link.df$V1),]
 cons.link.li = list(cons.link.df$V2)
 cons.link.li = unlist(cons.link.df$V2)
 
+
                                         # Crawler for .conservative.ca/...; fct., loop & clean #
                                         ########################################################
 
@@ -60,6 +61,7 @@ scrape_fb_con = function(cons.link.li) {
     html_attr(name = 'href')
   return(cbind(fb.get.con))
 }
+
 # Loop : run requests -> sleep -> repeat
 page.link.df = list()
 for(i in cons.link.li){
@@ -68,20 +70,15 @@ for(i in cons.link.li){
   Sys.sleep(0.05)
   cat("done\n")
 }
-# Save this..
-write.table(trans2.con, "conservative.2.csv", sep = "\t")
 # Transformations
-trans1.con= data.frame(page.link.df)                # -> Dataframe
-trans2.con = t(trans1.con)                          # Transpose 
-facebook.links.cons = as.list(trans2.con)           # -> List
-facebook.links.cons = unlist(facebook.links.cons)   # Vectorize/unlist
+trans1.con = ldply(page.link.df, data.frame)
 
                                          # Page/politician post history using Rfacebook/FB API #
                                          #######################################################
 
 # The API for R is not calibrated to evaluate actual URL's, however pagename = URL-end
 # https://www.facebook.com/Amazon should be fed into getPage() as "Amazon"
-facebook.links.tr = gsub("\\https://www.facebook.com/", "",  facebook.links.cons)   # Remove string of type 1
+facebook.links.tr = gsub("\\https://www.facebook.com/", "",  trans1.con$fb.get.con)   # Remove string of type 1
 facebook.links.tr2 = gsub("\\http://facebook.com/", "",  facebook.links.tr)         # Remove string of type 2
 facebook.links.tr3 = gsub("pmharper", "RtHonStephenHarper/",  facebook.links.tr2)   # Stephen Harper has changed - conservative.ca is out-of-date
 facebook.links.tr3 = facebook.links.tr3[!duplicated(facebook.links.tr)]             # Remove any duplicates
