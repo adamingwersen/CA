@@ -48,6 +48,14 @@ libface.df = libface.df[-grep("sherryromanado", libface.df$reallink),]
 libface.df = libface.df[-grep("terrysheehanformp2015", libface.df$reallink),]
 libface.df = libface.df[-grep("MPScottSimms", libface.df$reallink),]
 libface.df = libface.df[-grep("borysw", libface.df$reallink),]
+libface.df = libface.df[-grep("PamDamoffOakvilleNorthBurlington", libface.df$reallink),]
+libface.df = libface.df[-grep("lloyd4guelph", libface.df$reallink),]
+libface.df = libface.df[-grep("remi.massePLC", libface.df$reallink),]
+libface.df = libface.df[-grep("davidmcguinty", libface.df$reallink),]
+libface.df = libface.df[-grep("VoteMonsef", libface.df$reallink),]
+libface.df = libface.df[-grep("nominatejennifer", libface.df$reallink),]
+libface.df = libface.df[-grep("denisparadisbromemissisquoi/", libface.df$reallink),]
+libface.df = libface.df[-grep("votekateyoung", libface.df$reallink),]
 
 # Create vector of reallink only
 URLSub = libface.df[ ,'reallink'] 
@@ -59,11 +67,12 @@ message(dQuote(URLSub))
                                                   ######################################
 # Load Facebook oauth into environment:
 load("fb_oauth")
+token = "CAACEdEose0cBADnqZALd8JE8QsOuoAeep7fkw5fvr05FqzQy74jV5KlSBlFJNFNXQLjZCGws9a71aprBZCZCbHNR6weBMKVMiUtcQaL7BcYi2YLkOgvUmgZCR8isf0WpWYR4q1gUNWocJa1U7VRhdsXC0GkEEdQfgyc7AOhTPHteSI9LgNFk0Ij4gP8q41QZCkgCsyo9r0MgZDZD"
 
 # Get posts from each element in URLSub (up to 10k) from 1st of july until 19th of october (2015)
 require("Rfacebook")
 scrapelib_fb = function(URLSub){
-  fbsh = getPage(URLSub, token=fb_oauth, n = 100000, since = '2015/07/01', until = '2015/10/19')
+  fbsh = getPage(URLSub, token, n = 100000, since = '2015/07/01', until = '2015/10/19')
   return(cbind(URLSub, fbsh))
 }
 
@@ -77,4 +86,4 @@ for(i in URLSub){
 }
 # Iterate through all elements and apply function
 library("plyr")
-dplr = data.frame(ldply(URLSub, scrapelib_fb, .inform = TRUE))
+fb.liberal.df = data.frame(ldply(URLSub, scrapelib_fb, .inform = TRUE))
