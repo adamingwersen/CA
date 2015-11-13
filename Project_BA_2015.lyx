@@ -1,0 +1,215 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\fancyhf{}               % Clear fancy header/footer
+\fancyfoot[L]{My name}   % My name in Left footer
+\fancyfoot[R]{\thepage}  % Page number in Right footer
+\makeatletter
+\let\ps@plain\ps@fancy   % Plain page style = fancy page style
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.8cm
+\topmargin 2.8cm
+\rightmargin 2.8cm
+\bottommargin 2.8cm
+\headheight 2.8cm
+\headsep 2.8cm
+\footskip 2.8cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Title
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+In the past five years, researchers have become increasingly interested
+ in the applications of data gathered from social media.
+ The uses of such data varies greatly, and so does the results.
+ Under ideal circumstances social media data is, by some, thought to have
+ the capacity to serve as distorted data mileu for ongoing discussions on
+ various topics - a source of public opinion and intention, which can be
+ tapped into.
+ An impressive amount of approaches and techniques have been tried out on
+ different types of social media data within many fields of study.
+ An ongoing discussion on the topic of social media data is whether are
+ the limitations on insight derived, whether scientists are yet able to
+ harness the majority of avaialble data - and if they ever will; the amount
+ of data noise has increased as the usage of social media has.
+ An obvious trade-off lies herein.
+ As much as any one interested in measuring a representative public opinion
+ on social media wants to have a broad demography, i.e.
+ users of all types, they also have to cope with ever more noisy data.
+ One way to analyze social media data is to conduct sentiment analysis.
+ Sentiment analysis is broadly speaking, the analysis of text; 
+\begin_inset Quotes eld
+\end_inset
+
+looking
+\begin_inset Quotes erd
+\end_inset
+
+ for specific words and weighing sentences based on the occurence/frequency
+ of the pre-defined words.
+ Whilst this approach has provided some researchers with useful results,
+ the technique is time-demanding and may lead to biases if important words
+ are omitted, wrongfully wieghed or the discourse of sentences is used different
+ly by demographics; the use of e.g.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+#VoteTrump
+\begin_inset Quotes erd
+\end_inset
+
+ may be used ironically by liberals in the U.S.
+ Filtering these effects would be a comlicated endeavour.
+\begin_inset Newline newline
+\end_inset
+
+At the core of this empirical analysis are....
+\end_layout
+
+\begin_layout Section*
+Data 
+\end_layout
+
+\begin_layout Standard
+In gathering data, crucial decisions have been made in order to fetch, eliminate
+, aggregate and coerce spatial data gathered from various sources into a
+ workable frame.
+ This section explains methodology and discusses advantages and shortcomings
+ of approach.
+ 
+\end_layout
+
+\end_body
+\end_document
