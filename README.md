@@ -6,6 +6,6 @@ This project was not completed.
 
 The R-scrips:
 
-Custom solutions for scraping facebook-profiles for all candidates of the 3 main parties; Conservatives, Liberals & ...
+Custom solutions for scraping facebook-profiles for all candidates of the 3 main parties; Conservatives, Liberals & Democrats.
 All facebook profiles which are public are used with the Facebook API to gather all posts and do sematics.
 
