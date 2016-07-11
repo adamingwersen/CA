@@ -90,7 +90,7 @@ install_github("pablobarbera/Rfacebook/Rfacebook")
 library("Rfacebook")
     ## Create oauth in order to avoid having to fetch token every 2nd hr manually
 library("httr")
-fb_oauth <- fbOAuth(app_id = "558342837655130", app_secret = "9e001e86aed303b7579da57bbb3f7e0d", extended_permissions = FALSE)
+fb_oauth <- fbOAuth(app_id = "XXX", app_secret = "XXX", extended_permissions = FALSE)
 save(fb_oauth, file = "fb_oauth")
     ## Load oauth-key/token
 load("fb_oauth")
