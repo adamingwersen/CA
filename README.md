@@ -1,11 +1,4 @@
-# Bachelor Project in Economics
+# Collecting Data on the Canadian Election 2015
 
-### Predicting election outcomes using social media data and econometric modelling
-
-This project was not completed. 
-
-The R-scrips:
-
-Custom solutions for scraping facebook-profiles for all candidates of the 3 main parties; Conservatives, Liberals & Democrats.
-All facebook profiles which are public are used with the Facebook API to gather all posts and do sematics.
+Creating crawlers for the three main parties websites and fetching static data + facebook profile. Fetch all of the Facebook profile page history from each candidate. Coerce into 3 dataframes, 1 per party. Weigh according to reach/shares.
 
